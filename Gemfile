@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '3.3.0'
+ruby '3.3.6'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.4"
@@ -86,3 +86,6 @@ gem "spree_i18n"
 
 # only needed for MacOS and Ruby 3.0
 gem 'sassc', github: 'sass/sassc-ruby', branch: 'master'
+
+
+gem 'spree_multi_vendor'

@@ -145,6 +145,12 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    deface (1.9.0)
+      actionview (>= 5.2)
+      nokogiri (>= 1.6)
+      polyglot
+      railties (>= 5.2)
+      rainbow (>= 2.1.0)
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -161,12 +167,7 @@ GEM
       tzinfo
     execjs (2.9.1)
     ffaker (2.23.0)
-    ffi (1.17.0-aarch64-linux-gnu)
-    ffi (1.17.0-arm-linux-gnu)
-    ffi (1.17.0-arm64-darwin)
-    ffi (1.17.0-x86-linux-gnu)
-    ffi (1.17.0-x86_64-darwin)
-    ffi (1.17.0-x86_64-linux-gnu)
+    ffi (1.17.0-x64-mingw-ucrt)
     flag-icons-rails (3.4.6.1)
       sass-rails
     flatpickr (4.6.13.1)
@@ -228,11 +229,6 @@ GEM
     kaminari-i18n (0.5.0)
       kaminari
       rails
-    libv8-node (18.19.0.0)
-    libv8-node (18.19.0.0-aarch64-linux)
-    libv8-node (18.19.0.0-arm64-darwin)
-    libv8-node (18.19.0.0-x86_64-darwin)
-    libv8-node (18.19.0.0-x86_64-linux)
     logger (1.6.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -246,8 +242,6 @@ GEM
     matrix (0.4.2)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
-    mini_racer (0.16.0)
-      libv8-node (~> 18.19.0.0)
     minitest (5.25.1)
     mission_control-jobs (0.3.1)
       importmap-rails
@@ -277,21 +271,12 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.3)
-    nokogiri (1.16.7-aarch64-linux)
-      racc (~> 1.4)
-    nokogiri (1.16.7-arm-linux)
-      racc (~> 1.4)
-    nokogiri (1.16.7-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.16.7-x86-linux)
-      racc (~> 1.4)
-    nokogiri (1.16.7-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.16.7-x86_64-linux)
+    nokogiri (1.16.7-x64-mingw-ucrt)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     paranoia (3.0.0)
       activerecord (>= 6, < 8.1)
+    polyglot (0.3.5)
     popper_js (1.16.1)
     psych (5.1.2)
       stringio
@@ -340,6 +325,7 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
+    rainbow (3.1.1)
     rake (13.2.1)
     ransack (4.2.1)
       activerecord (>= 6.1.5)
@@ -492,6 +478,12 @@ GEM
       rails-i18n
       spree_core (>= 4.2.0.rc3)
       spree_extension
+    spree_multi_vendor (2.5.0)
+      deface (~> 1.0)
+      spree (>= 4.6.0)
+      spree_backend (>= 4.6.0)
+      spree_emails (>= 4.6.0)
+      spree_extension
     spree_sample (4.10.1)
       ffaker (~> 2.9)
       spree_core (>= 4.10.1)
@@ -502,12 +494,7 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (2.0.4-aarch64-linux-gnu)
-    sqlite3 (2.0.4-arm-linux-gnu)
-    sqlite3 (2.0.4-arm64-darwin)
-    sqlite3 (2.0.4-x86-linux-gnu)
-    sqlite3 (2.0.4-x86_64-darwin)
-    sqlite3 (2.0.4-x86_64-linux-gnu)
+    sqlite3 (2.0.4-x64-mingw-ucrt)
     state_machines (0.6.0)
     state_machines-activemodel (0.9.0)
       activemodel (>= 6.0)
@@ -533,6 +520,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2024.2)
+      tzinfo (>= 1.0.0)
     validates_zipcode (0.5.2)
       activemodel (>= 4.2.0)
     warden (1.2.9)
@@ -552,12 +541,7 @@ GEM
     zeitwerk (2.7.0)
 
 PLATFORMS
-  aarch64-linux
-  arm-linux
-  arm64-darwin
-  x86-linux
-  x86_64-darwin
-  x86_64-linux
+  x64-mingw-ucrt
 
 DEPENDENCIES
   bootsnap
@@ -581,6 +565,7 @@ DEPENDENCIES
   spree_frontend
   spree_gateway
   spree_i18n
+  spree_multi_vendor
   spree_sample
   sprockets-rails
   sqlite3 (>= 1.4)
@@ -590,7 +575,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.3.0p0
+   ruby 3.3.6p108
 
 BUNDLED WITH
    2.5.3
