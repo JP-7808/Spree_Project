@@ -142,7 +142,7 @@ GEM
     connection_pool (2.4.1)
     crass (1.0.6)
     csv (3.3.1)
-    date (3.3.4)
+    date (3.4.1)
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
@@ -168,7 +168,7 @@ GEM
       tzinfo
     execjs (2.9.1)
     ffaker (2.23.0)
-    ffi (1.17.0-x64-mingw-ucrt)
+    ffi (1.17.0-x86_64-linux-gnu)
     flag-icons-rails (3.4.6.1)
       sass-rails
     flatpickr (4.6.13.1)
@@ -199,8 +199,8 @@ GEM
     inline_svg (1.10.0)
       activesupport (>= 3.0)
       nokogiri (>= 1.6)
-    io-console (0.7.2)
-    irb (1.14.1)
+    io-console (0.8.0)
+    irb (1.14.2)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     jbuilder (2.12.0)
@@ -230,8 +230,9 @@ GEM
     kaminari-i18n (0.5.0)
       kaminari
       rails
+    libv8-node (18.19.0.0-x86_64-linux)
     logger (1.6.1)
-    loofah (2.22.0)
+    loofah (2.23.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -243,11 +244,17 @@ GEM
     matrix (0.4.2)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
-    minitest (5.25.1)
-    mission_control-jobs (0.3.1)
-      importmap-rails
+    mini_racer (0.16.0)
+      libv8-node (~> 18.19.0.0)
+    minitest (5.25.4)
+    mission_control-jobs (1.0.1)
+      actioncable (>= 7.1)
+      actionpack (>= 7.1)
+      activejob (>= 7.1)
+      activerecord (>= 7.1)
+      importmap-rails (>= 1.2.1)
       irb (~> 1.13)
-      rails (>= 7.1)
+      railties (>= 7.1)
       stimulus-rails
       turbo-rails
     mobility (1.2.9)
@@ -261,8 +268,8 @@ GEM
     money (6.19.0)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.7.2)
-    mutex_m (0.2.0)
-    net-imap (0.4.16)
+    mutex_m (0.3.0)
+    net-imap (0.5.2)
       date
       net-protocol
     net-pop (0.1.2)
@@ -271,15 +278,16 @@ GEM
       timeout
     net-smtp (0.5.0)
       net-protocol
-    nio4r (2.7.3)
-    nokogiri (1.16.7-x64-mingw-ucrt)
+    nio4r (2.7.4)
+    nokogiri (1.17.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     paranoia (3.0.0)
       activerecord (>= 6, < 8.1)
     polyglot (0.3.5)
     popper_js (1.16.1)
-    psych (5.1.2)
+    psych (5.2.1)
+      date
       stringio
     public_suffix (6.0.1)
     puma (6.4.2)
@@ -291,9 +299,8 @@ GEM
       rack (>= 3.0.0)
     rack-test (2.1.0)
       rack (>= 1.3)
-    rackup (2.1.0)
+    rackup (2.2.1)
       rack (>= 3)
-      webrick (~> 1.8)
     rails (7.1.4)
       actioncable (= 7.1.4)
       actionmailbox (= 7.1.4)
@@ -312,9 +319,9 @@ GEM
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.6.0)
+    rails-html-sanitizer (1.6.2)
       loofah (~> 2.21)
-      nokogiri (~> 1.14)
+      nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
     rails-i18n (7.0.9)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
@@ -332,10 +339,10 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
-    rdoc (6.7.0)
+    rdoc (6.9.1)
       psych (>= 4.0.0)
     regexp_parser (2.9.2)
-    reline (0.5.10)
+    reline (0.6.0)
       io-console (~> 0.5)
     request_store (1.7.0)
       rack (>= 1.4)
@@ -495,7 +502,7 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (2.0.4-x64-mingw-ucrt)
+    sqlite3 (2.0.4-x86_64-linux-gnu)
     state_machines (0.6.0)
     state_machines-activemodel (0.9.0)
       activemodel (>= 6.0)
@@ -506,10 +513,10 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringex (2.8.6)
-    stringio (3.1.1)
+    stringio (3.1.2)
     thor (1.3.2)
     tilt (2.4.0)
-    timeout (0.4.1)
+    timeout (0.4.3)
     tinymce-rails (5.10.9)
       railties (>= 3.1.1)
     tracking_number (2.0.1)
@@ -532,17 +539,16 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webrick (1.8.2)
     websocket (1.2.11)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.7.0)
+    zeitwerk (2.7.1)
 
 PLATFORMS
-  x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
