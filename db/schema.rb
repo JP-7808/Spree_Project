@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_12_15_135951) do
+ActiveRecord::Schema[7.1].define(version: 2024_12_15_164957) do
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
     t.string "message_id", null: false
@@ -691,6 +691,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_15_135951) do
     t.json "public_metadata"
     t.json "private_metadata"
     t.text "internal_note"
+    t.integer "vendor_id"
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id"
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id"
     t.index ["canceler_id"], name: "index_spree_orders_on_canceler_id"
@@ -703,6 +704,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_15_135951) do
     t.index ["store_id"], name: "index_spree_orders_on_store_id"
     t.index ["token"], name: "index_spree_orders_on_token"
     t.index ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id"
+  end
+
+  create_table "spree_other_models", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "vendor_id", null: false
+    t.index ["vendor_id"], name: "index_spree_other_models_on_vendor_id"
   end
 
   create_table "spree_payment_capture_events", force: :cascade do |t|
@@ -1796,6 +1805,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_15_135951) do
   add_foreign_key "spree_oauth_access_tokens", "spree_oauth_applications", column: "application_id"
   add_foreign_key "spree_option_type_translations", "spree_option_types"
   add_foreign_key "spree_option_value_translations", "spree_option_values"
+  add_foreign_key "spree_other_models", "spree_vendors", column: "vendor_id"
   add_foreign_key "spree_payment_sources", "spree_payment_methods", column: "payment_method_id"
   add_foreign_key "spree_payment_sources", "spree_users", column: "user_id"
   add_foreign_key "spree_product_property_translations", "spree_product_properties"
