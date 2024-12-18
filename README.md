@@ -68,31 +68,6 @@ You will also need to run `bin/setup` again to install the MySQL adapter and cre
 bin/rails s
 ```
 
-## Deployment
-
-### Using Render
-
-<a href="https://render.com/deploy?repo=https://github.com/spree/spree_starter/tree/main">
-  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height=32>
-</a>
-
-Note that sample data does not automatically get loaded when deploying to Render with the default configuration. In order to add sample data, run the following commands in the web service shell:
-
-```bash
-bin/rake spree_sample:load
-```
-
-### Using Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-### Other platforms
-
-Spree Starter is a standard Rails application, so you can deploy it to any platform that supports Ruby on Rails applications. You can also use Docker to deploy it to any container-based platform. Please check [Spree Guides](https://guides.spreecommerce.org/developer/deployment.html) for more information.
-
-## Troubleshooting
-
-### libvips error
 
 If you encounter an error like the following:
 
